@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web.Hosting;
 using Diplo.TraceLogViewer.Models;
+using System.Threading;
 
 namespace Diplo.TraceLogViewer.Services
 {
@@ -41,6 +42,7 @@ namespace Diplo.TraceLogViewer.Services
 
             if (File.Exists(logFilePath))
             {
+                Thread.Sleep(1000);
                 string log = File.ReadAllText(logFilePath);
 
                 var allLines = log.Split('\n');
